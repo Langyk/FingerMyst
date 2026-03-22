@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <!-- 渐变背景 -->
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e"/>
+      <stop offset="50%" style="stop-color:#16213e"/>
+      <stop offset="100%" style="stop-color:#1a1a2e"/>
+    </linearGradient>
+
+    <!-- 神秘光环渐变 -->
+    <radialGradient id="glowGradient" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#7c3aed;stop-opacity:0.6"/>
+      <stop offset="70%" style="stop-color:#4c1d95;stop-opacity:0.2"/>
+      <stop offset="100%" style="stop-color:#1a1a2e;stop-opacity:0"/>
+    </radialGradient>
+
+    <!-- 手指渐变 -->
+    <linearGradient id="fingerGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#a78bfa"/>
+      <stop offset="100%" style="stop-color:#7c3aed"/>
+    </linearGradient>
+  </defs>
+
+  <!-- 背景圆形 -->
+  <circle cx="100" cy="100" r="90" fill="url(#bgGradient)"/>
+
+  <!-- 神秘光环 -->
+  <circle cx="100" cy="100" r="80" fill="url(#glowGradient)"/>
+
+  <!-- 神秘指纹/秘境纹理 -->
+  <g opacity="0.3" stroke="#7c3aed" fill="none" stroke-width="1.5">
+    <circle cx="100" cy="100" r="60"/>
+    <circle cx="100" cy="100" r="45"/>
+    <circle cx="100" cy="100" r="30"/>
+    <path d="M70 70 Q100 50 130 70" />
+    <path d="M65 100 Q100 80 135 100" />
+    <path d="M70 130 Q100 150 130 130" />
+  </g>
+
+  <!-- 手指指向效果 -->
+  <g transform="translate(100, 100)">
+    <!-- 指针手指 -->
+    <path d="M-8 -20
+             L-5 -50
+             L0 -60
+             L5 -50
+             L8 -20
+             Z"
+          fill="url(#fingerGradient)"
+          transform="rotate(-15)"/>
+  </g>
+
+  <!-- 神秘星星点缀 -->
+  <g fill="#fbbf24" opacity="0.8">
+    <circle cx="50" cy="50" r="2">
+      <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="150" cy="60" r="1.5">
+      <animate attributeName="opacity" values="0.5;1;0.5" dur="1.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="55" cy="150" r="2">
+      <animate attributeName="opacity" values="0.4;1;0.4" dur="2.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="145" cy="145" r="1.5">
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="1.8s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- FM 字母抽象 -->
+  <text x="100" y="115"
+        font-family="'Cinzel', serif"
+        font-size="24"
+        font-weight="bold"
+        fill="#e9d5ff"
+        text-anchor="middle"
+        opacity="0.9">FM</text>
+</svg>

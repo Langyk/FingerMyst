@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(chmod +x /Users/lyk/Documents/coding/FingerMyst-server/financial_api/run.sh)",
+      "Bash(python:*)",
+      "Bash(,)",
+      "Bash(cd:*)"
+    ]
+  }
+}
