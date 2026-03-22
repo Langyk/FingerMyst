@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { Card, Typography, message, Row, Col, Statistic, Tag, Table, Select, Button, Space, Input } from 'antd';
-import { ArrowUpOutlined, ArrowDownOutlined, BankOutlined, FundOutlined, FileTextOutlined, StarOutlined, ThunderboltOutlined, ReloadOutlined } from '@ant-design/icons';
+import { ArrowUpOutlined, ArrowDownOutlined, BankOutlined, FundOutlined, FileTextOutlined, StarOutlined, ThunderboltOutlined, ReloadOutlined, SyncOutlined } from '@ant-design/icons';
 import { Layout } from 'antd';
 import SearchBar from '../../components/SearchBar';
 import Sidebar from '../../components/Sidebar';
@@ -33,7 +33,7 @@ const BrandHeader: React.FC<{ title?: string }> = ({ title }) => (
   </div>
 );
 
-// 券商汇总面板（使用真实API）
+// 证券汇总面板（使用真实API）
 const BrokerPanel: React.FC = () => {
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState<SecurityInfo[]>([]);
@@ -113,7 +113,7 @@ const BrokerPanel: React.FC = () => {
 
   const handleRefreshCache = async () => {
     try {
-      message.loading({ content: '正在刷新缓存...', key: 'refresh' });
+      message.loading({ content: '正在更新证券...', key: 'refresh' });
       const result = await refreshCache();
       message.success({ content: result.message, key: 'refresh' });
       fetchData();
@@ -153,7 +153,7 @@ const BrokerPanel: React.FC = () => {
 
   return (
     <div>
-      <BrandHeader title="券商汇总" />
+      <BrandHeader title="证券汇总" />
       <Card>
         {/* 搜索区域 */}
         <Row gutter={16} style={{ marginBottom: 16 }}>
@@ -196,6 +196,7 @@ const BrokerPanel: React.FC = () => {
                 setStatus(undefined);
                 setPagination(p => ({ ...p, current: 1 }));
               }}>重置</Button>
+              <Button icon={<SyncOutlined />} onClick={handleRefreshCache}>更新证券</Button>
               </Space>
           </Col>
         </Row>

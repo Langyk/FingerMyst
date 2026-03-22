@@ -19,7 +19,7 @@ const menuItems = [
   {
     key: 'broker',
     icon: <BankOutlined />,
-    label: '券商汇总',
+    label: '证券汇总',
   },
   {
     key: 'bond',
